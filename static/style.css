@@ -1,0 +1,273 @@
+.container {
+  /* width: 20px; */
+  /* margin: 60px; */
+  padding:30px;
+}
+
+.title {
+  font-family: "Roboto Slab", sans-serif;
+  color: rgb(6, 143, 40);
+  text-shadow: 7px 7px 0px rgba(104, 236, 74, 0.307);
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.user-message {
+  animation: slideInUp 0.1s ease-out forwards;
+  text-align: right;
+}
+
+.userName {
+  font-family: "Roboto Slab", sans-serif;
+  margin-right: 16px;
+  margin-bottom: 2px;
+}
+
+.user-flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.messageContainer {
+  position: relative; /* 确保可以相对于此容器定位三角形 */
+  background-color: rgb(113, 209, 253); /* 消息背景颜色 */
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 8px;
+  border-radius: 10px; /* 圆角边框 */
+  margin-right: 15px; /* 右边留出空间给三角形 */
+  height: auto;
+}
+
+.messageContainer:after {
+  content: "";
+  position: absolute;
+  top: 50%; /* 定位到容器的垂直中心 */
+  right: -10px; /* 在容器右边界外显示 */
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent; /* 上边透明边框 */
+  border-bottom: 10px solid transparent; /* 下边透明边框 */
+  border-left: 10px solid rgb(113, 209, 253); /* 左边显示消息背景色 */
+  transform: translateY(-50%); /* 确保三角形居中显示 */
+}
+
+.messageText {
+  margin-top: 1px;
+
+  margin-right: 5px;
+  font-family: "Roboto Slab", sans-serif;
+}
+
+.imageContainer {
+  margin-top: 1px;
+  margin-right: 5px;
+}
+
+.user-message img {
+  width: 50px;
+  height: auto;
+  border-width: 3px;
+  border-color: black;
+  border-radius: 50%;
+}
+
+/* AI CSS */
+.ai-message {
+  text-align: left;
+}
+
+.aiName {
+  font-family: "Roboto Slab", sans-serif;
+  margin-left: 9px;
+  margin-bottom: 2px;
+}
+
+.ai-flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.aiMessageContainer {
+  position: relative; /* 确保可以相对于此容器定位三角形 */
+  background-color: #dad9d9; /* 消息背景颜色 */
+  padding-left: 10px;
+  padding-right: 5px;
+  padding-top: 10px;
+  border-radius: 10px; /* 圆角边框 */
+  margin-left: 15px; /* 左边留出空间给三角形 */
+  margin-bottom: 4px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.aiMessageContainer:before {
+  /* 使用 :before 伪元素来创建左侧的三角形 */
+  content: "";
+  position: absolute;
+  top: 50%; /* 定位到容器的垂直中心 */
+  left: -10px; /* 在容器左边界外显示 */
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent; /* 上边透明边框 */
+  border-bottom: 10px solid transparent; /* 下边透明边框 */
+  border-right: 10px solid #dad9d9; /* 右边显示消息背景色，形成向左的三角形 */
+  transform: translateY(-50%); /* 确保三角形居中显示 */
+}
+
+.aiImageContainer {
+  margin-top: 1px;
+  margin-left: 5px;
+}
+
+.ai-message img {
+  width: 50px;
+  height: auto;
+  border-width: 3px;
+  border-color: black;
+  border-radius: 50%;
+}
+
+#chat-container {
+  height: 350px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: -5px;
+  border: 1.7px solid #b0aeae;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  background-color: #ffffff;
+  overflow-y: auto;
+}
+
+.form-control {
+  /* width: 1210px; */
+  height: 50px;
+  border-radius: 20px;
+  border-width: 3px;
+  border-style: double;
+  padding-left: 20px;
+  font-size: 15px;
+  margin-left: -11px;
+}
+
+.btn {
+  width: 100%;
+  height: 49px;
+  margin-left:12px;
+  min-width: 50px; /* 根据需要调整这个值 */
+
+}
+
+
+.dropZone{
+  height: 100px;
+  border-style: dashed;
+  border-width: 1px;
+  padding: -12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+
+#table-preview{
+  border-style: solid;
+  border-width:1px;
+  border-color: rgb(162, 162, 162);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.6s;
+  max-height: 300px; 
+  overflow-y: scroll;
+  margin-bottom: 20px;
+}
+
+
+
+#table-preview:hover{
+  border-color:#249c0f;
+}
+
+
+
+#table-preview thead th {
+  position: sticky;
+  top: 0;
+  background-color: white; /* 确保表头有背景色 */
+  z-index: 1; /* 确保表头位于其他内容之上 */
+}
+
+
+
+#toggle-button{
+  width:auto;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius:20px;
+  background-color: rgba(142, 139, 139, 0.623);
+  border-color: transparent;
+  cursor: pointer;           /* 鼠标指针样式 */
+  transition: background-color 0.6s; /* 背景色过渡效果 */
+}
+
+/* 鼠标悬停时的样式 */
+#toggle-button:hover {
+  background-color: #249c0f; /* 悬停时的背景色 */
+}
+
+/* 按钮被点击时的样式 */
+#toggle-button:active {
+  background-color: #004080; /* 点击时的背景色 */
+}
+
+
+.button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size:11px;
+
+}
+
+.image_generate{
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+
+/* spinner styles in style.css */
+.spinner_S1WN {
+  animation: spinner_MGfb .8s linear infinite;
+  animation-delay: -.8s;
+}
+
+.spinner_Km9P {
+  animation-delay: -.65s;
+}
+
+.spinner_JApP {
+  animation-delay: -.5s;
+}
+
+@keyframes spinner_MGfb {
+  93.75%, 100% {
+      opacity: .2;
+  }
+}
