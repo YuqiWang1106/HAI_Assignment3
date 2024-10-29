@@ -285,7 +285,7 @@ function sendMessage() {
             const prompt = constructPromptForVegaLite(parsedData, userMessage);
 
             // 发送用户消息和构建的提示到新的端点
-            fetch("https://hai-assignment3-1/process_query", {
+            fetch("https://hai-assignment3-1.onrender.com/process_query", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ message: userMessage, prompt: prompt }),
