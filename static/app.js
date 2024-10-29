@@ -81,7 +81,7 @@ function uploadCSV(file) {
     const formData = new FormData();
     formData.append('file', file);
 
-    fetch('https://HAI_Assignment3-1.onrender.com/upload_csv', {
+    fetch('https://hai-assignment3-1.onrender.com/upload_csv', {
         method: 'POST',
         body: formData
     })
@@ -285,7 +285,7 @@ function sendMessage() {
             const prompt = constructPromptForVegaLite(parsedData, userMessage);
 
             // 发送用户消息和构建的提示到新的端点
-            fetch("https://HAI_Assignment3-1/process_query", {
+            fetch("https://hai-assignment3-1/process_query", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ message: userMessage, prompt: prompt }),
